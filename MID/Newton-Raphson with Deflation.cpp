@@ -22,11 +22,11 @@ int main()
     while(fabs(f(x)) > 0.0005);
     double r1 = x;
     cout << "Root 1 = " << r1 << endl;
-    // Deflation: x^3 + 0x^2 - 6x + 4
+
     double b1 = 1;
     double b2 = r1;
     double b3 = r1*r1 - 6;
-    // Quadratic solve: x^2 + b2*x + b3 = 0
+
     double D = b2*b2 - 4*b1*b3;
     double r2 = (-b2 + sqrt(D)) / (2*b1);
     double r3 = (-b2 - sqrt(D)) / (2*b1);
