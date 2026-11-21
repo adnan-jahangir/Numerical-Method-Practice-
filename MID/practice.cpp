@@ -1,0 +1,32 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int i,j,n=5;
+    double x[5]= {1, 2, 3, 4, 5};
+    double y[5]= {1, 8, 27, 64, 125};
+    double d[5][5]= {};
+
+    for(i=0; i<n; i++)
+        d[i][0]=y[i];
+
+    for(j=1; j<n; j++)
+        for(i=0; i<n-j; i++)
+            d[i][j]=(d[i+1][j-1]-d[i][j-1])/(x[i+j]-x[i]);
+
+    double xp=4.7;
+
+    double result=d[0][0];
+    double term=1;
+
+     for(j=1;j<n;j++){
+        term*=(xp-x[j-1]);
+        result+=term*d[0][j];
+
+     }
+
+     cout<< fixed<< setprecision(3)<<result;
+    return 0;
+}

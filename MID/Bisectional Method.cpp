@@ -19,7 +19,7 @@ int main()
 
 
     }
-    cout<< (a+b)/2;
+    cout<< setprecision(3)<<(a+b)/2;
 
 
 
